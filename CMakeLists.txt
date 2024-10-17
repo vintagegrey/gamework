@@ -10,4 +10,6 @@ add_executable(gamework src/main.cpp
         src/ecs/entity_manager.cpp
         src/ecs/entity_manager.h
         src/ecs/id.h
+        src/ecs/component_manager.cpp
+        src/ecs/component_manager.h
 )

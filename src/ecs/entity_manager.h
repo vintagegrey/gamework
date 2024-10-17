@@ -1,6 +1,9 @@
-//
-// Created by jimmy on 10/17/2024.
-//
+/**
+ * @file: entity_manager.h
+ * @brief: Handles entity creation
+ * @author: James Henry
+ * @date: 10/17/2024
+ */
 
 #ifndef GAMEWORK_ENTITY_MANAGER_H
 #define GAMEWORK_ENTITY_MANAGER_H
@@ -10,13 +13,12 @@
 
 namespace ecs {
 
-/** Holds information about entities */
 struct entity_info {
     entity id;      /**< The entity's full ID */
     int32_t index;  /**< The entity's index in its archetype */
 };
 
-/** Handles creation of entities */
+/** Handles entity creation */
 class entity_manager {
 private:
     std::unordered_map<entity, entity_info> infos;
