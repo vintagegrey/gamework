@@ -16,6 +16,7 @@
 namespace ecs {
 
 struct component_info {
+    component id;
     size_t size;    /**< Size in bytes */
     size_t align;   /**< Byte alignment */
 };
@@ -33,6 +34,7 @@ public:
         component id = idm->new_id();
 
         infos[id] = {
+                id,
                 sizeof(T),
                 alignof(T)
         };
@@ -58,6 +60,16 @@ public:
     template <typename T>
     component_info *get_info() {
         return get_info(get_id<T>());
+    }
+
+    template <typename T>
+    component_info *ensure_component(id_manager *idm) {
+        auto it = type_to_id.find(typeid(T));
+        if (it != type_to_id.end()) {
+            return get_info(it->second);
+        }
+
+        return get_info(new_component<T>(idm));
     }
 };
 

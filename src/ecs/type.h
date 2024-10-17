@@ -21,8 +21,20 @@ struct type {
     void remove(component c);
     bool has(component c);
     size_t get_index(component c);
+    [[nodiscard]] size_t hash() const;
+    bool operator==(const type &t) const;
 };
 
+}
+
+/** Hashing implementation */
+namespace std {
+    template <>
+    struct hash<ecs::type> {
+        size_t operator()(const ecs::type &t) const {
+            return t.hash();
+        }
+    };
 }
 
 #endif //GAMEWORK_TYPE_H

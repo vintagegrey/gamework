@@ -18,3 +18,8 @@ ecs::entity ecs::world::new_entity() {
     stats.entity_count++;
     return data.entities.new_entity(&data.ids);
 }
+
+ecs::archetype *ecs::world::ensure_archetype(ecs::type t) {
+    stats.archetype_count++;
+    return data.archetypes.ensure_archetype(t);
+}

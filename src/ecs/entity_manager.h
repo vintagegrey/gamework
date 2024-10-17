@@ -10,12 +10,14 @@
 
 #include <unordered_map>
 #include "id_manager.h"
+#include "archetype.h"
 
 namespace ecs {
 
 struct entity_info {
-    entity id;      /**< The entity's full ID */
-    int32_t index;  /**< The entity's index in its archetype */
+    archetype *archetype;   /**< What archetype this entity belongs in */
+    entity id;              /**< The entity's full ID */
+    int32_t index;          /**< The entity's index in its archetype */
 };
 
 /** Handles entity creation */

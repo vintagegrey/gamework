@@ -18,4 +18,6 @@ add_executable(gamework src/main.cpp
         src/ecs/type.h
         src/ecs/world.cpp
         src/ecs/world.h
+        src/ecs/archetype_manager.cpp
+        src/ecs/archetype_manager.h
 )

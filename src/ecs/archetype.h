@@ -12,8 +12,10 @@
 
 namespace ecs {
 
+/** @todo: Archetype graph */
+
 /** Stores entities of a specific combination of components */
-class archetype {
+struct archetype {
     type type;
 };
 

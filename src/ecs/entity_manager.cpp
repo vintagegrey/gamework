@@ -7,6 +7,7 @@ ecs::entity ecs::entity_manager::new_entity(ecs::id_manager *idm) {
     entity id = idm->new_id();
 
     infos[id] = {
+            nullptr,
             id,
             -1
     };

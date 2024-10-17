@@ -5,7 +5,7 @@ int main() {
     ecs::world w;
 
     auto jit = w.new_entity();
-    auto bing = w.new_component<int>();
+    w.assign(jit, 5);
 
     return 0;
 }
