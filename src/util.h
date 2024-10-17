@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#define ERROR(...) std::cerr << __FUNCTION__ << ", ln " << __LINE__ << ": " << __VA_ARGS__ << '\n'
+#define ERROR(...) std::cerr << __FUNCTION__ << "(), ln " << __LINE__ << ": " << __VA_ARGS__ << '\n'
 #define ASSERT(_e, ...) if (!(_e)) { ERROR(__VA_ARGS__); exit(1); }
 
 #endif //GAMEWORK_UTIL_H

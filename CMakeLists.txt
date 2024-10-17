@@ -4,8 +4,10 @@ project(gamework)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(gamework src/main.cpp
-        src/ecs/ecs.h
         src/ecs/id_manager.h
         src/ecs/id_manager.cpp
         src/util.h
+        src/ecs/entity_manager.cpp
+        src/ecs/entity_manager.h
+        src/ecs/id.h
 )

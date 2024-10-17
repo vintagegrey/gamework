@@ -13,13 +13,13 @@ ecs::entity ecs::id_manager::new_id() {
         return ids[alive++];
     }
 
-    id id = ECS_ENTITY_BUILD(alive++);
+    id id = ECS_ID_BUILD(alive++);
     ids.push_back(id);
     return id;
 }
 
 void ecs::id_manager::kill_id(ecs::id e) {
-    auto uid = ECS_ENTITY_UID(e);
+    auto uid = ECS_ID_UID(e);
 
     if (uid >= ids.size()) {
         return;
@@ -27,6 +27,6 @@ void ecs::id_manager::kill_id(ecs::id e) {
 
     uint32_t last_alive = alive - 1;
     std::swap(ids[last_alive], ids[uid]);
-    ids[last_alive] = ECS_ENTITY_GEN_ADD(e);
+    ids[last_alive] = ECS_ID_GEN_ADD(e);
     alive--;
 }

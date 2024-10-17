@@ -6,7 +6,7 @@
 #define GAMEWORK_ID_MANAGER_H
 
 #include <vector>
-#include "ecs.h"
+#include "id.h"
 
 namespace ecs {
 
