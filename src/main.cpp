@@ -1,11 +1,11 @@
 #include <iostream>
-#include "ecs/id_manager.h"
-#include "ecs/entity_manager.h"
-#include "ecs/component_manager.h"
+#include "ecs/world.h"
 
 int main() {
-    ecs::id_manager idm;
-    ecs::component_manager cm;
+    ecs::world w;
+
+    auto jit = w.new_entity();
+    auto bing = w.new_component<int>();
 
     return 0;
 }

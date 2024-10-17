@@ -12,4 +12,10 @@ add_executable(gamework src/main.cpp
         src/ecs/id.h
         src/ecs/component_manager.cpp
         src/ecs/component_manager.h
+        src/ecs/archetype.cpp
+        src/ecs/archetype.h
+        src/ecs/type.cpp
+        src/ecs/type.h
+        src/ecs/world.cpp
+        src/ecs/world.h
 )
