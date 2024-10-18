@@ -50,7 +50,7 @@ private:
 
 public:
     world();
-    world(world_config cfg);
+    explicit world(world_config cfg);
 
     entity new_entity();
 
@@ -82,10 +82,12 @@ public:
         if (ei->archetype) {
             t = ei->archetype->type;
         }
-
         t.add(ci->id);
 
         ei->archetype = ensure_archetype(t);
+        void *src = reinterpret_cast<void *>(c);
+        ei->archetype->components[0].add(&src);
+        std::cout << *(int *) ei->archetype->components[0].get(0);
     }
 };
 

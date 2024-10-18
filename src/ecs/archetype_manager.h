@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include "archetype.h"
 #include "type.h"
+#include "component_manager.h"
 
 namespace ecs {
 
@@ -20,7 +21,7 @@ private:
     std::unordered_map<type, archetype> archetypes;
 
 public:
-    [[nodiscard]] archetype *ensure_archetype(type t);
+    [[nodiscard]] archetype *ensure_archetype(type t, component_manager *cm);
 };
 
 }

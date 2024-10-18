@@ -20,4 +20,6 @@ add_executable(gamework src/main.cpp
         src/ecs/world.h
         src/ecs/archetype_manager.cpp
         src/ecs/archetype_manager.h
+        src/ecs/component_buffer.cpp
+        src/ecs/component_buffer.h
 )

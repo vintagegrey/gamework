@@ -21,5 +21,5 @@ ecs::entity ecs::world::new_entity() {
 
 ecs::archetype *ecs::world::ensure_archetype(ecs::type t) {
     stats.archetype_count++;
-    return data.archetypes.ensure_archetype(t);
+    return data.archetypes.ensure_archetype(t, &data.components);
 }

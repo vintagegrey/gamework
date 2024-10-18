@@ -8,7 +8,10 @@
 #ifndef GAMEWORK_ARCHETYPE_H
 #define GAMEWORK_ARCHETYPE_H
 
+#include <vector>
 #include "type.h"
+#include "component_buffer.h"
+#include "component_manager.h"
 
 namespace ecs {
 
@@ -16,7 +19,11 @@ namespace ecs {
 
 /** Stores entities of a specific combination of components */
 struct archetype {
+    std::vector<component_buffer> components;
     type type;
+
+    archetype();
+    explicit archetype(struct type t, component_manager *cm);
 };
 
 }
