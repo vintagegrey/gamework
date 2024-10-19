@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.26)
-project(gamework)
+project(gamework VERSION 0.0.1 DESCRIPTION "gamework alpha")
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(gamework src/main.cpp
+add_executable(gamework src/test/main.cpp
         src/ecs/id_manager.h
         src/ecs/id_manager.cpp
-        src/util.h
+        src/core/util.h
         src/ecs/entity_manager.cpp
         src/ecs/entity_manager.h
         src/ecs/id.h
@@ -22,4 +22,25 @@ add_executable(gamework src/main.cpp
         src/ecs/archetype_manager.h
         src/ecs/component_buffer.cpp
         src/ecs/component_buffer.h
+        src/gfx/graphics_device.cpp
+        src/gfx/graphics_device.h
+        src/gfx/window.cpp
+        src/gfx/window.h
+        src/core/vec.h
+        src/gfx/window_mode.h
 )
+
+set_target_properties(gamework PROPERTIES VERSION %{PROJECT_VERSION})
+set_target_properties(gamework PROPERTIES PUBLIC_HEADER include/gamework.h)
+
+find_package(SDL2 CONFIG REQUIRED)
+target_link_libraries(gamework
+        PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+
+find_package(SDL2_image CONFIG REQUIRED)
+target_link_libraries(gamework
+        PRIVATE
+        $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>)

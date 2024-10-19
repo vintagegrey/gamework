@@ -14,6 +14,7 @@ namespace ecs {
 
 constexpr size_t CB_INIT_RESERVE = 16;
 
+/** @todo: component removal and archetype switching */
 class component_buffer {
 private:
     void *data;

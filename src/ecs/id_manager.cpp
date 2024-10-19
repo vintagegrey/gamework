@@ -2,7 +2,7 @@
 // Created by jimmy on 10/17/2024.
 //
 #include "id_manager.h"
-#include "../util.h"
+#include "../core/util.h"
 
 ecs::id_manager::id_manager() : alive(0) {
     ids.reserve(EM_INIT_RESERVE);

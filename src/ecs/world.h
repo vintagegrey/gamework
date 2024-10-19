@@ -44,7 +44,8 @@ private:
 
     template <typename T>
     component_info *ensure_component() {
-        stats.component_count++;
+        /** @todo: Figure this stupid shit out */
+        //stats.component_count++;
         return data.components.ensure_component<T>(&data.ids);
     }
 
@@ -73,9 +74,10 @@ public:
             ci = ensure_component<T>();
         } else {
             ci = data.components.get_info<T>();
-            if (!ci) {
-                return;
-            }
+        }
+
+        if (!ci) {
+            return;
         }
 
         type t;
@@ -85,9 +87,6 @@ public:
         t.add(ci->id);
 
         ei->archetype = ensure_archetype(t);
-        void *src = reinterpret_cast<void *>(c);
-        ei->archetype->components[0].add(&src);
-        std::cout << *(int *) ei->archetype->components[0].get(0);
     }
 };
 

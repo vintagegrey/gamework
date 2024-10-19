@@ -11,7 +11,7 @@
 #include <unordered_map>
 #include <typeindex>
 #include "id_manager.h"
-#include "../util.h"
+#include "../core/util.h"
 
 namespace ecs {
 
