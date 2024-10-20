@@ -9,14 +9,14 @@
 #define GAMEWORK_GRAPHICS_DEVICE_H
 
 #include "window.h"
+#include "renderer.h"
 
 namespace gfx {
 
-class graphics_device {
-private:
+struct graphics_device {
     window window;
+    renderer renderer;
 
-public:
     graphics_device();
 };
 

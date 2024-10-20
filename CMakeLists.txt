@@ -30,6 +30,10 @@ add_executable(gamework src/test/main.cpp
         src/gfx/window_mode.h
         src/core/metadata.cpp
         src/core/metadata.h
+        src/gfx/renderer.cpp
+        src/gfx/renderer.h
+        src/gfx/sprite.cpp
+        src/gfx/sprite.h
 )
 
 set_target_properties(gamework PROPERTIES VERSION %{PROJECT_VERSION})
