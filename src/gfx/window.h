@@ -14,6 +14,11 @@
 
 namespace gfx {
 
+constexpr int DEFAULT_W = 640;
+constexpr int DEFAULT_H = 480;
+constexpr const char *DEFAULT_TITLE = "Untitled";
+constexpr window_mode DEFAULT_WINDOW_MODE = WM_WINDOWED;
+
 struct window_info {
     v2i resolution;
     window_mode mode;
@@ -25,7 +30,7 @@ private:
     window_info info;
 
 public:
-
+    window();
 };
 
 }

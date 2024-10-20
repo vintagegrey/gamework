@@ -15,6 +15,9 @@ namespace gfx {
 class graphics_device {
 private:
     window window;
+
+public:
+    graphics_device();
 };
 
 }

@@ -28,6 +28,8 @@ add_executable(gamework src/test/main.cpp
         src/gfx/window.h
         src/core/vec.h
         src/gfx/window_mode.h
+        src/core/metadata.cpp
+        src/core/metadata.h
 )
 
 set_target_properties(gamework PROPERTIES VERSION %{PROJECT_VERSION})
