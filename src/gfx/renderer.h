@@ -26,8 +26,10 @@ private:
     _::renderer_info info;
 
 public:
-    renderer(const window *w);
-    SDL_Renderer *get_renderer() const;
+    renderer();
+    void init(const window *w);
+    [[nodiscard]] SDL_Renderer *get_renderer() const;
+    [[nodiscard]] _::renderer_info get_info() const;
 };
 
 }

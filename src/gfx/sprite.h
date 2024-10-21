@@ -26,12 +26,12 @@ struct sprite_info {
 class sprite {
 private:
     SDL_Texture *data;
+    _::sprite_info info;
 
 public:
-    const _::sprite_info info;
-
     sprite();
     explicit sprite(const std::string &path, const renderer *r);
+    [[nodiscard]] _::sprite_info get_info() const;
 };
 
 }

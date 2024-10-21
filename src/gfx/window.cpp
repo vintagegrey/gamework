@@ -4,7 +4,13 @@
 #include "window.h"
 #include "../core/util.h"
 
-gfx::window::window() : info({ DEFAULT_W, DEFAULT_H }, DEFAULT_WINDOW_MODE){
+gfx::window::window() : info({ DEFAULT_W, DEFAULT_H }, DEFAULT_WINDOW_MODE) {}
+
+SDL_Window *gfx::window::get_window_context() const {
+    return sdl_window;
+}
+
+void gfx::window::init() {
     sdl_window =
             SDL_CreateWindow(
                     DEFAULT_TITLE,
@@ -16,6 +22,6 @@ gfx::window::window() : info({ DEFAULT_W, DEFAULT_H }, DEFAULT_WINDOW_MODE){
     ASSERT(sdl_window, "failed to init SDL window: " << SDL_GetError())
 }
 
-SDL_Window *gfx::window::get_window_context() const {
-    return sdl_window;
+gfx::_::window_info gfx::window::get_info() const {
+    return info;
 }

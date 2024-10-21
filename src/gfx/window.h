@@ -34,7 +34,9 @@ private:
 
 public:
     window();
+    void init();
     [[nodiscard]] SDL_Window *get_window_context() const;
+    [[nodiscard]] _::window_info get_info() const;
 };
 
 }

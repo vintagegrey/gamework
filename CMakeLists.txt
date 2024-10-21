@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.26)
 project(gamework VERSION 0.0.1 DESCRIPTION "gamework alpha")
-
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(gamework src/test/main.cpp
+add_executable(gamework
+        src/test/main.cpp
         src/ecs/id_manager.h
         src/ecs/id_manager.cpp
         src/core/util.h
@@ -35,9 +35,6 @@ add_executable(gamework src/test/main.cpp
         src/gfx/sprite.cpp
         src/gfx/sprite.h
 )
-
-set_target_properties(gamework PROPERTIES VERSION %{PROJECT_VERSION})
-set_target_properties(gamework PROPERTIES PUBLIC_HEADER include/gamework.h)
 
 find_package(SDL2 CONFIG REQUIRED)
 target_link_libraries(gamework
