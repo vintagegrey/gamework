@@ -13,7 +13,7 @@
 #include "component_manager.h"
 #include "archetype_manager.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 struct world_config {
     /** Unknown components are defined automatically if assigned to an entity */

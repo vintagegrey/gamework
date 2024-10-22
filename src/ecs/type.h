@@ -11,7 +11,7 @@
 #include <set>
 #include "id.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 /** Represents a combination of components, used for archetypes */
 struct type {
@@ -30,8 +30,8 @@ struct type {
 /** Hashing implementation */
 namespace std {
     template <>
-    struct hash<ecs::type> {
-        size_t operator()(const ecs::type &t) const {
+    struct hash<gamework::ecs::type> {
+        size_t operator()(const gamework::ecs::type &t) const {
             return t.hash();
         }
     };

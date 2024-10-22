@@ -13,7 +13,7 @@
 #include "id_manager.h"
 #include "../core/util.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 struct component_info {
     component id;

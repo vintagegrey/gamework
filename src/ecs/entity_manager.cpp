@@ -3,7 +3,9 @@
 //
 #include "entity_manager.h"
 
-ecs::entity ecs::entity_manager::new_entity(ecs::id_manager *idm) {
+namespace gamework::ecs {
+
+entity entity_manager::new_entity(id_manager *idm) {
     entity id = idm->new_id();
 
     infos[id] = {
@@ -15,14 +17,16 @@ ecs::entity ecs::entity_manager::new_entity(ecs::id_manager *idm) {
     return id;
 }
 
-void ecs::entity_manager::kill_entity(ecs::id_manager *idm, ecs::entity e) {
+void entity_manager::kill_entity(id_manager *idm, entity e) {
     idm->kill_id(e);
 }
 
-ecs::entity_info *ecs::entity_manager::get_info(ecs::entity e) {
+entity_info *entity_manager::get_info(entity e) {
     auto it = infos.find(e);
     if (it != infos.end()) {
         return &it->second;
     }
     return nullptr;
+}
+
 }

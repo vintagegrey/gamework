@@ -11,7 +11,7 @@
 #include "window.h"
 #include "renderer.h"
 
-namespace gfx {
+namespace gamework::gfx {
 
 struct graphics_device {
     window window;

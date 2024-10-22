@@ -10,6 +10,8 @@
 
 #include <cmath>
 
+namespace gamework {
+
 template <typename T>
 struct vec {
     T x, y;
@@ -96,5 +98,7 @@ struct vec {
 
 using v2f = vec<float>;
 using v2i = vec<int>;
+
+}
 
 #endif //GAMEWORK_VEC_H

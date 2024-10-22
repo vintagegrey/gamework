@@ -12,7 +12,7 @@
 #include "id_manager.h"
 #include "archetype.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 struct entity_info {
     archetype *archetype;   /**< What archetype this entity belongs in */

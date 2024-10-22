@@ -5,9 +5,11 @@
 #include "../core/util.h"
 #include <SDL_image.h>
 
-gfx::sprite::sprite() : data(nullptr), info() {}
+namespace gamework::gfx {
 
-gfx::sprite::sprite(const std::string &path, const gfx::renderer *r) {
+sprite::sprite() : data(nullptr), info() {}
+
+sprite::sprite(const std::string &path, const renderer *r) {
     ASSERT(r, "renderer not initialized while loading '" << path << "'.")
 
     if (!(data = IMG_LoadTexture(r->get_renderer(), path.c_str()))) {
@@ -17,6 +19,8 @@ gfx::sprite::sprite(const std::string &path, const gfx::renderer *r) {
     SDL_QueryTexture(data, nullptr, nullptr, &info.size.x, &info.size.y);
 }
 
-gfx::_::sprite_info gfx::sprite::get_info() const {
+sprite_info sprite::get_info() const {
     return info;
+}
+
 }

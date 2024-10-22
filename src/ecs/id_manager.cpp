@@ -4,11 +4,13 @@
 #include "id_manager.h"
 #include "../core/util.h"
 
-ecs::id_manager::id_manager() : alive(0) {
+namespace gamework::ecs {
+
+id_manager::id_manager() : alive(0) {
     ids.reserve(EM_INIT_RESERVE);
 }
 
-ecs::entity ecs::id_manager::new_id() {
+entity ecs::id_manager::new_id() {
     if (alive != ids.size()) {
         return ids[alive++];
     }
@@ -18,7 +20,7 @@ ecs::entity ecs::id_manager::new_id() {
     return id;
 }
 
-void ecs::id_manager::kill_id(ecs::id e) {
+void id_manager::kill_id(id e) {
     auto uid = ECS_ID_UID(e);
 
     if (uid >= ids.size()) {
@@ -29,4 +31,6 @@ void ecs::id_manager::kill_id(ecs::id e) {
     std::swap(ids[last_alive], ids[uid]);
     ids[last_alive] = ECS_ID_GEN_ADD(e);
     alive--;
+}
+
 }

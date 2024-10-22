@@ -7,7 +7,7 @@
 
 #include <SDL.h>
 
-namespace gfx {
+namespace gamework::gfx {
 
 enum window_mode {
     WM_WINDOWED     = 0,

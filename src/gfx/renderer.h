@@ -11,25 +11,23 @@
 #include <SDL.h>
 #include "window.h"
 
-namespace gfx {
+namespace gamework::gfx {
 
 /** Renderer config data */
-namespace _ {
 struct renderer_info {
     /** @todo: renderer info */
 };
-}
 
 class renderer {
 private:
     SDL_Renderer *sdl_renderer;
-    _::renderer_info info;
+    renderer_info info;
 
 public:
     renderer();
     void init(const window *w);
     [[nodiscard]] SDL_Renderer *get_renderer() const;
-    [[nodiscard]] _::renderer_info get_info() const;
+    [[nodiscard]] renderer_info get_info() const;
 };
 
 }

@@ -10,7 +10,7 @@
 
 #include "component_manager.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 constexpr size_t CB_INIT_RESERVE = 16;
 

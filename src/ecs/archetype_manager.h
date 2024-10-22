@@ -13,7 +13,7 @@
 #include "type.h"
 #include "component_manager.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 /** Handles archetype creation */
 class archetype_manager {

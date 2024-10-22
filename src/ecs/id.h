@@ -13,7 +13,7 @@
 #define ECS_ID_GEN_ADD(_e)          (((uint64_t)_e & ~(0xFFFFULL << 32)) | (((ECS_ID_GEN(_e) + 1) & 0xFFFF) << 32))
 #define ECS_ID_BUILD(_u)            (((uint64_t) 0x0 << 48) | ((uint64_t) 0x0 << 32) | _u)
 
-namespace ecs {
+namespace gamework::ecs {
 
 using id = uint64_t;
 using entity = id;

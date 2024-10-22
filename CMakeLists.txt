@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.26)
 project(gamework VERSION 0.0.1 DESCRIPTION "gamework alpha")
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(gamework
+add_library(gamework SHARED
         src/test/main.cpp
         src/ecs/id_manager.h
         src/ecs/id_manager.cpp
@@ -34,6 +34,7 @@ add_executable(gamework
         src/gfx/renderer.h
         src/gfx/sprite.cpp
         src/gfx/sprite.h
+        include/gamework.h
 )
 
 find_package(SDL2 CONFIG REQUIRED)

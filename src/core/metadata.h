@@ -10,6 +10,8 @@
 
 #include <string>
 
+namespace gamework {
+
 constexpr const char *WINDOWS   = "Windows";
 constexpr const char *MAC       = "Mac";
 constexpr const char *LINUX     = "Linux";
@@ -25,5 +27,6 @@ struct metadata {
     metadata(std::string app_name, uint8_t major, uint8_t minor);
 };
 
+}
 
 #endif //GAMEWORK_METADATA_H

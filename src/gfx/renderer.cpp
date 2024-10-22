@@ -4,13 +4,15 @@
 #include "renderer.h"
 #include "../core/util.h"
 
-gfx::renderer::renderer() : sdl_renderer(nullptr) {}
+namespace gamework::gfx {
 
-SDL_Renderer *gfx::renderer::get_renderer() const {
+renderer::renderer() : sdl_renderer(nullptr) {}
+
+SDL_Renderer *renderer::get_renderer() const {
     return sdl_renderer;
 }
 
-void gfx::renderer::init(const gfx::window *w) {
+void renderer::init(const window *w) {
     sdl_renderer =
             SDL_CreateRenderer(
                     w->get_window_context(),
@@ -19,6 +21,8 @@ void gfx::renderer::init(const gfx::window *w) {
     ASSERT(sdl_renderer, "failed to init SDL renderer: " << SDL_GetError())
 }
 
-gfx::_::renderer_info gfx::renderer::get_info() const {
+renderer_info renderer::get_info() const {
     return info;
+}
+
 }

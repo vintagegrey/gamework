@@ -4,13 +4,15 @@
 #include "window.h"
 #include "../core/util.h"
 
-gfx::window::window() : info({ DEFAULT_W, DEFAULT_H }, DEFAULT_WINDOW_MODE) {}
+namespace gamework::gfx {
 
-SDL_Window *gfx::window::get_window_context() const {
+window::window() : info({ DEFAULT_W, DEFAULT_H }, DEFAULT_WINDOW_MODE) {}
+
+SDL_Window *window::get_window_context() const {
     return sdl_window;
 }
 
-void gfx::window::init() {
+void window::init() {
     sdl_window =
             SDL_CreateWindow(
                     DEFAULT_TITLE,
@@ -22,6 +24,8 @@ void gfx::window::init() {
     ASSERT(sdl_window, "failed to init SDL window: " << SDL_GetError())
 }
 
-gfx::_::window_info gfx::window::get_info() const {
+window_info window::get_info() const {
     return info;
+}
+
 }

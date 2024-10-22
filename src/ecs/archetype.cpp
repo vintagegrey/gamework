@@ -4,10 +4,14 @@
 #include "archetype.h"
 #include <utility>
 
-ecs::archetype::archetype() {}
+namespace gamework::ecs {
 
-ecs::archetype::archetype(ecs::type t, ecs::component_manager *cm) : type(std::move(t))  {
+archetype::archetype() {}
+
+archetype::archetype(ecs::type t, component_manager *cm) : type(std::move(t))  {
     for (const component &c : type.set) {
         components.emplace_back(cm->get_info(c));
     }
+}
+
 }

@@ -13,7 +13,7 @@
 #include "component_buffer.h"
 #include "component_manager.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 /** @todo: Archetype graph */
 

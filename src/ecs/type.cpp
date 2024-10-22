@@ -3,25 +3,27 @@
 //
 #include "type.h"
 
+namespace gamework::ecs {
+
 constexpr size_t GOLDEN_RATIO = 0x9e3779b9;
 
-void ecs::type::add(ecs::component c) {
+void type::add(component c) {
     set.insert(c);
 }
 
-void ecs::type::remove(ecs::component c) {
+void type::remove(component c) {
     set.erase(c);
 }
 
-bool ecs::type::has(ecs::component c) {
+bool type::has(component c) {
     return set.contains(c);
 }
 
-size_t ecs::type::get_index(ecs::component c) {
+size_t type::get_index(component c) {
     return std::distance(set.find(c), set.end());
 }
 
-size_t ecs::type::hash() const {
+size_t type::hash() const {
     size_t hash = 0;
     std::hash<component> hasher;
 
@@ -32,7 +34,8 @@ size_t ecs::type::hash() const {
     return hash;
 }
 
-bool ecs::type::operator==(const ecs::type &t) const {
+bool type::operator==(const type &t) const {
     return set == t.set;
 }
 
+}

@@ -8,7 +8,7 @@
 #include <vector>
 #include "id.h"
 
-namespace ecs {
+namespace gamework::ecs {
 
 constexpr size_t EM_INIT_RESERVE = 128;
 
