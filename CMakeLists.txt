@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.26)
 project(gamework VERSION 0.0.1 DESCRIPTION "gamework alpha")
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(gamework SHARED
-        src/test/main.cpp
+include_directories(include src)
+
+add_library(gamework STATIC
         src/ecs/id_manager.h
         src/ecs/id_manager.cpp
         src/core/util.h
@@ -35,6 +36,8 @@ add_library(gamework SHARED
         src/gfx/sprite.cpp
         src/gfx/sprite.h
         include/gamework.h
+        include/gamework_core.h
+        include/gamework_ecs.h
 )
 
 find_package(SDL2 CONFIG REQUIRED)
@@ -48,3 +51,6 @@ find_package(SDL2_image CONFIG REQUIRED)
 target_link_libraries(gamework
         PRIVATE
         $<IF:$<TARGET_EXISTS:SDL2_image::SDL2_image>,SDL2_image::SDL2_image,SDL2_image::SDL2_image-static>)
+
+add_executable(gamework_example src/test/main.cpp)
+target_link_libraries(gamework_example gamework)

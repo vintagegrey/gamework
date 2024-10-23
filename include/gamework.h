@@ -5,4 +5,7 @@
 #ifndef GAMEWORK_GAMEWORK_H
 #define GAMEWORK_GAMEWORK_H
 
+#include <gamework_core.h>
+#include <gamework_ecs.h>
+
 #endif //GAMEWORK_GAMEWORK_H

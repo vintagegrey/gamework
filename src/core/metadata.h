@@ -17,6 +17,7 @@ constexpr const char *MAC       = "Mac";
 constexpr const char *LINUX     = "Linux";
 constexpr const char *OTHER     = "Other";
 
+/** Metadata for this gamework program */
 struct metadata {
     std::string app_name;
     std::string build_date;
